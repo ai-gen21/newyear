@@ -1,34 +1,21 @@
 import streamlit as st
 import random
-import base64
-from PIL import Image
-from io import BytesIO
 
-# Function to convert an image to base64
-def image_to_base64(image_path):
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode()
-
-# Convert the Batman logo to base64
-batman_base64 = image_to_base64(r"C:\Users\Archana B\Downloads\batmanlogo.jpg")
-
-# Set up Streamlit page with custom theme
+# Set up Streamlit page with custom theme (dark mode)
 st.set_page_config(page_title="Happy New Year!", layout="wide")
 
-# Add custom CSS to set the background image as Batman logo
-st.markdown(f"""
+# Add custom CSS for dark mode styling
+st.markdown("""
     <style>
-        .stApp {{
-            background-image: url('data:image/jpeg;base64,{batman_base64}');
-            background-size: cover;
-            background-position: center;
-            color: white;  /* Text color */
+        .stApp {
+            background-color: #1e1e1e;  /* Dark background color */
+            color: white;  /* White text for dark background */
             font-family: 'Arial', sans-serif;
-        }}
-        .stButton>button {{
-            background-color: #302926;  /* Secondary background color */
+        }
+        .stButton>button {
+            background-color: #302926;  /* Secondary background color for buttons */
             color: white;
-        }}
+        }
     </style>
     """, unsafe_allow_html=True)
 
@@ -71,3 +58,4 @@ if st.button("Open Your Gift Box"):
     st.markdown(f"**Surprise!** {gift}")
 else:
     st.markdown("Click the button above to open your virtual gift box! 🎉")
+
