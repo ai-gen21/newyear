@@ -12,7 +12,7 @@ def image_to_base64(image_path):
 # Convert the Batman logo to base64
 batman_base64 = image_to_base64(r"C:\Users\Archana B\Downloads\batmanlogo.jpg")
 
-# Set up Streamlit page with custom theme (dark mode)
+# Set up Streamlit page with custom theme
 st.set_page_config(page_title="Happy New Year!", layout="wide")
 
 # Add custom CSS to set the background image as Batman logo
@@ -22,11 +22,11 @@ st.markdown(f"""
             background-image: url('data:image/jpeg;base64,{batman_base64}');
             background-size: cover;
             background-position: center;
-            color: white;  /* White text for dark background */
+            color: white;  /* Text color */
             font-family: 'Arial', sans-serif;
         }}
         .stButton>button {{
-            background-color: #302926;  /* Secondary background color for buttons */
+            background-color: #302926;  /* Secondary background color */
             color: white;
         }}
     </style>
